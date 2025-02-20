@@ -22,8 +22,6 @@ app.config['MAIL_DEFAULT_SENDER'] = 'sandricksoni@gmail.com'
 
 mail = Mail(app)  # Flask-Mail ობიექტი
 
-
-
 # 🔹 მესიჯების მოდელი
 class Message(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -41,9 +39,8 @@ class ContactForm(FlaskForm):
 
 # 🔹 ვერმინაციის ფუნქცია
 def send_verification_email(user_email):
-    s = Serializer(app.config['SECRET_KEY'])  # Remove expires_in
+    s = Serializer(app.config['SECRET_KEY'])
     token = s.dumps({'email': user_email})  # აღარ საჭიროა .decode('utf-8')
-
     
     # ვადა (1 საათი)
     verification_link = url_for('verify_email', token=token, _external=True)
