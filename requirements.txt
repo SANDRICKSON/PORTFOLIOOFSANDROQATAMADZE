@@ -1,0 +1,8 @@
+Flask
+Flask-SQLAlchemy
+Flask-Mail
+Flask-WTF
+wtforms
+itsdangerous
+requests
+gunicorn
