@@ -6,3 +6,4 @@ wtforms
 itsdangerous
 requests
 gunicorn
+email_validator
